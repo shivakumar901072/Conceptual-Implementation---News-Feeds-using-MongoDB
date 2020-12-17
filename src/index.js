@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.get('./newFeeds', async (req,res) => {
+app.get('/newFeeds', async (req,res) => {
  res.send(await newsArticleModel.find().skip(sanitize(req.query.offset, 0)).limit(sanitize(req.query.limit , 10)));
 });
 
